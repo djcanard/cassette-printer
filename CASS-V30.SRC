@@ -1,0 +1,405 @@
+10 CLS:SCREEN 9:WIDTH 80:COLOR 15,16:KEY OFF
+20 LINE (190,50)-(410,50),15
+30 LINE (190,50)-(190,149)
+40 LINE (410,50)-(410,149)
+50 LINE (190,150)-(410,150)
+60 CIRCLE (245,90),17
+70 CIRCLE (245,90),23
+80 CIRCLE (355,90),17
+90 CIRCLE (355,90),23
+100 LINE (223,125)-(377,125)
+110 LINE (214,150)-(223,125)
+120 LINE (378,125)-(388,150)
+130 LINE (185,121)-(185,143)
+140 LINE (416,121)-(416,143)
+150 LINE (185,121)-(190,121)
+160 LINE (185,144)-(190,144)
+170 LINE (416,144)-(410,144)
+180 LINE (416,120)-(410,120)
+190 LINE (200,65)-(400,65)
+200 LINE (200,65)-(200,118)
+210 LINE (400,65)-(400,118)
+220 LINE (200,118)-(400,118)
+230 CIRCLE (245,140),5
+240 CIRCLE (357,140),5
+250 CIRCLE (268,137),4
+260 CIRCLE (332,137),4
+270 LOCATE 10,26:PRINT "A"
+280 PAINT (195,55),8,15
+290 PAINT (260,130),8,15
+300 PAINT (245,140),15,15
+310 PAINT (357,140),15,15
+320 PAINT (268,137),15,15
+330 PAINT (332,137),15,15
+340 PAINT (187,123),8,15
+350 PAINT (415,143),8,15
+360 PAINT (220,80),7,15
+370 PAINT (230,80),15,15
+380 PAINT (370,80),15,15
+390 PAINT (245,90),3,15
+400 PAINT (355,90),3,15
+410 LINE (0,30)-(650,30),4
+420 LINE (0,32)-(650,32),4
+430 LINE (0,31)-(650,31),15
+440 LOCATE 2,28:PRINT "(C) 1992 Gilsoftware":GOTO 560
+450 T$="Cassette Printer v 3.0"
+460 L=LEN(T$)+32
+470 P$=SPACE$(30)
+480 T$=SPACE$(30)+T$+SPACE$(30)
+490 FOR N=1 TO L
+500 MID$(P$,1,30)=MID$(T$,N,30)
+510 LOCATE 13,24:COLOR 14:PRINT P$
+520 FOR J=0 TO 200:NEXT J:NEXT N
+530 A$=INKEY$
+540 IF A$=" " THEN GOTO 640
+550 GOTO 490
+560 LINE (0,219)-(650,219),4
+570 LINE (0,220)-(650,220),15
+580 LINE (0,221)-(650,221),9
+590 LINE (0,239)-(650,239),4
+600 LINE (0,240)-(650,240),15
+610 LINE (0,241)-(650,241),9:COLOR 15,16
+620 LOCATE 17,18:PRINT "Druk op de spatiebalk om verder te gaan..."
+630 GOTO 450
+640 CLS:LOCATE 1,25:COLOR 14:PRINT CHR$(174);CHR$(174);CHR$(174);" CASSETTE PRINTER ";CHR$(175);CHR$(175);CHR$(175)
+650 LINE (0,17)-(650,17),4
+660 LINE (0,18)-(650,18),15
+670 LINE (0,19)-(650,19),9
+680 LINE (0,227)-(650,227),4
+690 LINE (0,228)-(650,228),15
+700 LINE (0,229)-(650,229),9
+710 PRINT
+720 COLOR 14:PRINT SPACE$(13);"(C) 1992 Gilsoftware ";CHR$(196);CHR$(196);" Cassette printer v 3.0":COLOR 15
+730 PRINT
+740 COLOR 7:PRINT TAB(23);"1 = Hoofdtitel(s) invoeren"
+750 COLOR 7:PRINT TAB(23);"2 = Songtitels invoeren"
+760 COLOR 7:PRINT TAB(23);"3 = Eigenaar en type van cassettebandje"
+770 COLOR 7:PRINT TAB(23);"4 = Uitvoeren op scherm of printer"
+780 COLOR 7:PRINT TAB(23);"5 = Gegevens saven"
+790 COLOR 7:PRINT TAB(23);"6 = Gegevens laden"
+800 COLOR 7:PRINT TAB(23);"7 = Gegevens wissen"
+810 COLOR 7:PRINT TAB(21);"ESC = Stoppen"
+820 COLOR 15:PRINT " Hoofdtitel 1 : ":COLOR 6:LOCATE 13,17:PRINT TI1$
+830 COLOR 15:PRINT " Hoofdtitel 2 : ":COLOR 6:LOCATE 14,17:PRINT TI2$
+840 COLOR 15:PRINT " Eigenaar is  : ":COLOR 6:LOCATE 15,17:PRINT VWB$:COLOR 15
+850 COLOR 15:PRINT " Type cass.   : ":COLOR 6:LOCATE 16,17:PRINT TC$:COLOR 15
+860 COLOR 7:LOCATE 21,2:PRINT "Typ '*' als u naar de hoofdmenu wilt..."
+870 COLOR 7:LOCATE 23,2:PRINT "Druk op de 'spatiebalk' voor achtergrondkleur...":COLOR 15
+880 KZ$=INKEY$
+900 A=A+1:IF A=63 THEN A=0
+910 IF KZ$="" THEN 880
+920 IF KZ$="1" THEN 1470
+930 IF KZ$="2" THEN 1720
+940 IF KZ$="3" THEN 3820
+950 IF KZ$="4" THEN 2830
+960 IF KZ$="5" THEN 1030
+970 IF KZ$="6" THEN 1240
+980 IF KZ$="7" THEN 4030
+990 IF KZ$="8" THEN 2600
+1000 IF KZ$=" " THEN COLOR ,A:LOCATE 23,50:PRINT A
+1010 IF ASC(KZ$)=27 THEN 2600
+1020 GOTO 880
+1030 ' GEGEVENS OPSLAAN
+1040 CLS
+1050 LOCATE 1,1:PRINT SPACE$(26);"*** Gegevens opslaan ***"
+1060 LINE (0,17)-(650,17),4
+1070 LINE (0,18)-(650,18),15
+1080 LINE (0,19)-(650,19),9
+1090 LINE (0,146)-(650,146),4
+1100 LINE (0,147)-(650,147),15
+1110 LINE (0,148)-(650,148),9
+1120 PRINT:PRINT SPACE$(9);"Hier kunt u de naam ingeven van de file die u wilt 'saven'."
+1130 LOCATE 5,10:INPUT "De naam van de file ";NF$
+1140 IF NF$="*" OR NF$="" THEN 640
+1150 PRINT:PRINT "         Klopt de naam die u gegeven heeft (J/N) ?"
+1160 KNG$=INKEY$
+1170 IF KNG$="J" OR KNG$="j" THEN 1210
+1180 IF KNG$="N" OR KNG$="n" THEN 1130
+1190 IF KNG$="*" THEN 640
+1200 GOTO 1160
+1210 CLOSE:OPEN NF$ FOR OUTPUT AS#1
+1220 PRINT #1,TI1$;",";TI2$;",";VWB$;",";AT1$;",";AT2$;",";AT3$;",";AT4$;",";AT5$;",";AT6$;",";AT7$;",";AT8$;",";AT9$;",";AT10$;",";AT11$;",";BT1$;",";BT2$;",";BT3$;",";BT4$;",";BT5$;",";BT6$;",";BT7$;",";BT8$;",";BT9$;",";BT10$
+1230 LOCATE 9,20:PRINT SPACE$(33);"Gegevens opgeslagen...":FOR GO=0 TO 2500:NEXT GO:GOTO 640
+1240 ' GEGEVENS LADEN
+1250 CLS:PRINT SPACE$(27);"*** Gegevens laden ***"
+1260 LINE (0,17)-(650,17),4
+1270 LINE (0,18)-(650,18),15
+1280 LINE (0,19)-(650,19),9
+1290 LINE (0,270)-(650,270),4
+1300 LINE (0,271)-(650,271),15
+1310 LINE (0,272)-(650,272),9
+1320 PRINT:PRINT "         Hier kunt u de naam ingeven van de file die u wilt 'laden'."
+1330 PRINT:INPUT "         In welke drive wilt u de files zien ";FZ$
+1340 IF FZ$="*" OR FZ$="" THEN 640
+1350 PRINT:FILES FZ$:LOCATE 21,32:PRINT FZ$
+1360 LOCATE 21,1:INPUT "         De naam van de file ";NG$
+1370 IF NG$="*" OR NG$="" THEN 640
+1380 LOCATE 22,1:PRINT:PRINT "         Klopt de naam die u gegeven heeft (J/N) ?"
+1390 KNG$=INKEY$
+1400 IF KNG$="J" OR KNG$="j" THEN 1440
+1410 IF KNG$="N" OR KNG$="n" THEN 1360
+1420 IF KNG$="*" THEN GOTO 640
+1430 GOTO 1390
+1440 CLOSE:OPEN "I" ,#1, NG$
+1450 INPUT #1,TI1$,TI2$,VWB$,AT1$,AT2$,AT3$,AT4$,AT5$,AT6$,AT7$,AT8$,AT9$,AT10$,AT11$,BT1$,BT2$,BT3$,BT4$,BT5$,BT6$,BT7$,BT8$,BT9$,BT10$
+1460 LOCATE 19,20:PRINT SPACE$(33);"Gegevens geladen...":FOR GA=0 TO 2500:NEXT GA:GOTO 640
+1470 ' KIES HOOFDTITEL(S)
+1480 CLS
+1490 LINE (0,17)-(650,17),4
+1500 LINE (0,18)-(650,18),15
+1510 LINE (0,19)-(650,19),9
+1520 LINE (0,145)-(650,145),4
+1530 LINE (0,146)-(650,146),15
+1540 LINE (0,147)-(650,147),9
+1550 LOCATE 6,27:PRINT "..................."
+1560 LOCATE 8,27:PRINT "..................."
+1570 LOCATE 1,23:PRINT "*** Hoofdtitel invoeren ***"
+1580 PRINT
+1590 PRINT "         De titel ziet u als hij in een rek staat.
+1600 PRINT "         De titel mag niet langer zijn als 19 karakters.
+1610 PRINT
+1620 INPUT "         Wat is titel 1 ";TI1$
+1630 PRINT
+1640 INPUT "         Wat is titel 2 ";TI2$
+1650 PRINT
+1660 PRINT "         Kloppen de titels die u gekozen heeft (J/N) ?"
+1670 TGK$=INKEY$
+1680 IF TGK$="J" OR TGK$="j" THEN 640
+1690 IF TGK$="N" OR TGK$="n" THEN 1480
+1700 IF TGK$="*" THEN GOTO 640
+1710 GOTO 1670
+1720 ' KIES SONGTITELS
+1730 CLS
+1740 LINE (0,17)-(650,17),4
+1750 LINE (0,18)-(650,18),15
+1760 LINE (0,19)-(650,19),9
+1770 LINE (0,240)-(650,240),4
+1780 LINE (0,241)-(650,241),15
+1790 LINE (0,242)-(650,242),9
+1800 PRINT SPACE$(22);"*** Songtitels invoeren ***"
+1810 PRINT
+1820 PRINT "   U kunt maximaal 11 titels kiezen per kant (A/B)."
+1830 PRINT "   Per titel kunt u 22 karakters typen. Typ '*' als u genoeg titels heeft."
+1840 PRINT:R$="......................"
+1850 LOCATE 6,24:PRINT R$
+1860 LOCATE 7,24:PRINT R$
+1870 LOCATE 8,24:PRINT R$
+1880 LOCATE 9,24:PRINT R$
+1890 LOCATE 10,24:PRINT R$
+1900 LOCATE 11,24:PRINT R$
+1910 LOCATE 12,24:PRINT R$
+1920 LOCATE 13,24:PRINT R$
+1930 LOCATE 14,24:PRINT R$
+1940 LOCATE 15,24:PRINT R$
+1950 LOCATE 16,24:PRINT R$
+1960 LOCATE 6,3:INPUT " kant A:   titel 1 ";AT1$
+1980 INPUT "             titel 2 ";AT2$
+2000 INPUT "             titel 3 ";AT3$
+2020 INPUT "             titel 4 ";AT4$
+2040 INPUT "             titel 5 ";AT5$
+2060 INPUT "             titel 6 ";AT6$
+2080 INPUT "             titel 7 ";AT7$
+2100 INPUT "             titel 8 ";AT8$
+2120 INPUT "             titel 9 ";AT9$
+2140 INPUT "             titel 10";AT10$
+2160 INPUT "             titel 11";AT11$
+2180 CLS:PRINT SPACE$(22);"*** Songtitels invoeren ***"
+2190 LINE (0,17)-(650,17),4
+2200 LINE (0,18)-(650,18),15
+2210 LINE (0,19)-(650,19),9
+2220 LINE (0,240)-(650,240),4
+2230 LINE (0,241)-(650,241),15
+2240 LINE (0,242)-(650,242),9
+2250 PRINT:PRINT "         Hier kunt u de titels invoeren voor kant B."
+2260 LOCATE 6,24:PRINT R$
+2270 LOCATE 7,24:PRINT R$
+2280 LOCATE 8,24:PRINT R$
+2290 LOCATE 9,24:PRINT R$
+2300 LOCATE 10,24:PRINT R$
+2310 LOCATE 11,24:PRINT R$
+2320 LOCATE 12,24:PRINT R$
+2330 LOCATE 13,24:PRINT R$
+2340 LOCATE 14,24:PRINT R$
+2350 LOCATE 15,24:PRINT R$
+2360 LOCATE 16,24:PRINT R$
+2370 LOCATE 6,3:INPUT " kant B:   titel 1 ";BT1$
+2390 INPUT "             titel 2 ";BT2$
+2410 INPUT "             titel 3 ";BT3$
+2430 INPUT "             titel 4 ";BT4$
+2450 INPUT "             titel 5 ";BT5$
+2470 INPUT "             titel 6 ";BT6$
+2490 INPUT "             titel 7 ";BT7$
+2510 INPUT "             titel 8 ";BT8$
+2530 INPUT "             titel 9 ";BT9$
+2550 INPUT "             titel 10";BT10$
+2570 INPUT "             titel 11";BT11$
+2590 GOTO 640
+2600 ' STOPPEN
+2610 CLS
+2620 LINE (0,17)-(650,17),4
+2630 LINE (0,18)-(650,18),15
+2640 LINE (0,19)-(650,19),4
+2650 LINE (0,80)-(650,80),4
+2660 LINE (0,81)-(650,81),15
+2670 LINE (0,82)-(650,82),4
+2680 PRINT SPACE$(28);"*** Stoppen ***"
+2690 PRINT:PRINT "         Wilt u echt stoppen (J/N) ?"
+2700 SP$=INKEY$
+2710 IF SP$="J" OR SP$="j" THEN 2770
+2720 IF SP$="N" OR SP$="n" THEN 2750
+2730 IF SP$="*" THEN GOTO 640
+2740 GOTO 2700
+2750 PRINT:PRINT "         De gegevens blijven bewaard 22"
+2760 FOR GEG=0 TO 3000:NEXT GEG:GOTO 640
+2770 PRINT:PRINT "         Wilt u meteen naar SYSTEM (J/N) ?"
+2780 NS$=INKEY$
+2790 IF NS$="J" OR NS$="j" THEN CLS:LOCATE 10,18:PRINT "Bedankt voor Cassette Printer op te starten...":FOR W=0 TO 5000:NEXT:SYSTEM
+2800 IF NS$="N" OR NS$="n" THEN SCREEN 0:KEY ON:KEY 6,"SYSTEM"+CHR$(13):CLS:PRINT "GW-BASIC 3.32":PRINT "(C) Copyright Microsoft 1983,1984,1985,1986,1987,1988,1989":PRINT "60300 Bytes vrij":NEW:END
+2810 IF NS$="*" THEN GOTO 640
+2820 GOTO 2780
+2830 ' UITVOEREN VAN HOESJE
+2840 CLS
+2850 LINE (0,17)-(650,17),4
+2860 LINE (0,18)-(650,18),15
+2870 LINE (0,19)-(650,19),9
+2880 LINE (0,100)-(650,100),4
+2890 LINE (0,101)-(650,101),15
+2900 LINE (0,102)-(650,102),9
+2910 PRINT SPACE$(24);"*** Uitvoeren van hoesje ***"
+2920 PRINT
+2930 LOCATE 3,10:PRINT "Als u op de 'P' drukt gaat hij printen."
+2940 PRINT "         Als u op de 'S' drukt laat hij het voorbeeld op het scherm zien."
+2950 PRINT "         Druk op de 'P' of 'S'."
+2960 PS$=INKEY$
+2970 IF PS$="P" OR PS$="p" THEN GOTO 3020
+2980 IF PS$="S" OR PS$="s" THEN 3410
+2990 IF PS$="*" THEN GOTO 640
+3000 GOTO 2960
+3010 ' PRINTEN
+3020 PRINT:PRINT "         Een momentje aub...                  "
+3050 LPRINT CHR$(27);CHR$(120);CHR$(49);"      :---------------------------------------:"
+3060 LPRINT"      :         (C) 1992 GILSOFTWARE          :"
+3070 LPRINT"      :                                       :"
+3080 LPRINT"      :                                       :"
+3090 LPRINT"      :---------------------------------------:"
+3100 LPRINT"         ";CHR$(27);CHR$(87);CHR$(49);TI1$
+3110 LPRINT"     ";TI2$;CHR$(27);CHR$(87);CHR$(48)
+3120 LPRINT CHR$(27);CHR$(120);CHR$(49);"      :---------------------------------------:"
+3130 LPRINT"      : KANT A:            KANT B:            :"
+3140 LPRINT"      : ------------------ ------------------ :"
+3150 LPRINT CHR$(27);CHR$(33);CHR$(17);"       : ";AT1$;TAB(34);BT1$;TAB(57);":"
+3160 LPRINT"       : ";AT2$;TAB(33);BT2$;TAB(56);":"
+3170 LPRINT"       : ";AT3$;TAB(33);BT3$;TAB(56);":"
+3180 LPRINT"       : ";AT4$;TAB(33);BT4$;TAB(56);":"
+3190 LPRINT"       : ";AT5$;TAB(33);BT5$;TAB(56);":"
+3200 LPRINT"       : ";AT6$;TAB(33);BT6$;TAB(56);":"
+3210 LPRINT"       : ";AT7$;TAB(33);BT7$;TAB(56);":"
+3220 LPRINT"       : ";AT8$;TAB(33);BT8$;TAB(56);":"
+3230 LPRINT"       : ";AT9$;TAB(33);BT9$;TAB(56);":"
+3240 LPRINT"       : ";AT10$;TAB(33);BT10$;TAB(56);":"
+3250 LPRINT"       : ";AT11$;TAB(33);BT11$;TAB(56);":"
+3260 LPRINT CHR$(27);CHR$(64);CHR$(27);CHR$(120);CHR$(49);"      :";TAB(50);":"
+3270 LPRINT"      :_______________________________________:"
+3280 LPRINT"      :                                       :"
+3290 LPRINT"      :  Mono         O                       :"
+3300 LPRINT"      :  Stereo       O                       :"
+3310 LPRINT"      :                                       :"
+3320 LPRINT"      :  Master       O                       :"
+3330 LPRINT"      :  Copy         O                       :"
+3340 LPRINT"      :  Datum        ";DATE$;TAB(55);":"
+3350 LPRINT"      :  Tijd         ";TIME$;TAB(55);":"
+3360 LPRINT"      :  Eigenaar   : ";VWB$;TAB(55);":"
+3370 LPRINT"      :  Type cass. : ";TC$;TAB(55);":"
+3380 LPRINT"      :                                       :"
+3390 LPRINT"      :_______________________________________:"
+3400 GOTO 640
+3410 ' SCHERM
+3420 LOCATE 10,14:PRINT "|-----------------------------------------------|"
+3430 PRINT TAB(14);"|            (C) 1992 GILSOFTWARE               |"
+3440 PRINT TAB(14);"|                                               |"
+3450 PRINT TAB(14);"|                                               |"
+3460 PRINT TAB(14);"|-----------------------------------------------|"
+3470 PRINT TAB(14);"|           ";TI1$;TAB(62);"|"
+3480 PRINT TAB(14);"|           ";TI2$;TAB(62);"|"
+3490 PRINT TAB(14);"|-----------------------------------------------|"
+3500 PRINT TAB(14);"| KANT A:                KANT B:                |"
+3510 PRINT TAB(14);"| ---------------------- ---------------------- |"
+3520 PRINT TAB(14);"| ";AT1$;TAB(39);BT1$;TAB(62);"|"
+3530 PRINT TAB(14);"| ";AT2$;TAB(39);BT2$;TAB(62);"|"
+3540 PRINT TAB(14);"| ";AT3$;TAB(39);BT3$;TAB(62);"|"
+3550 PRINT TAB(14);"| ";AT4$;TAB(39);BT4$;TAB(62);"|"
+3560 PRINT TAB(14);"| ";AT5$;TAB(39);BT5$;TAB(62);"|"
+3570 PRINT TAB(14);"| ";AT6$;TAB(39);BT6$;TAB(62);"|"
+3580 PRINT TAB(14);"| ";AT7$;TAB(39);BT7$;TAB(62);"|"
+3590 PRINT TAB(14);"| ";AT8$;TAB(39);BT8$;TAB(62);"|"
+3600 PRINT TAB(14);"| ";AT9$;TAB(39);BT9$;TAB(62);"|"
+3610 PRINT TAB(14);"| ";AT10$;TAB(39);BT10$;TAB(62);"|"
+3620 PRINT TAB(14);"| ";AT11$;TAB(39);BT11$;TAB(62);"|"
+3630 PRINT TAB(14);"|                                               |"
+3640 PRINT TAB(14);"|_______________________________________________|"
+3650 PRINT TAB(14);"|                                               |"
+3660 PRINT TAB(14);"|  Stereo       O                               |"
+3670 PRINT TAB(14);"|  Mono         O                               |"
+3680 PRINT TAB(14);"|                                               |"
+3690 PRINT TAB(14);"|  Master       O                               |"
+3700 PRINT TAB(14);"|  Copy         O                               |"
+3710 PRINT TAB(14);"|  Datum        ";DATE$;TAB(62);"|"
+3720 PRINT TAB(14);"|  Tijd         ";TIME$;TAB(62);"|"
+3730 PRINT TAB(14);"|  Eigenaar   : ";VWB$;TAB(62);"|"
+3740 PRINT TAB(14);"|  Type cass. : ";TC$;TAB(62);"|"
+3750 PRINT TAB(14);"|                                               |"
+3760 PRINT TAB(14);"|_______________________________________________|"
+3770 PRINT
+3780 PRINT TAB(30);"Druk op de 'M' ..."
+3790 LI$=INKEY$
+3800 IF LI$="M" OR LI$="m" OR LI$="*" THEN 640
+3810 GOTO 3790
+3820 ' EIGENAAR/TYPE VAN CASSETTEBANDJE
+3830 CLS
+3840 LINE (0,17)-(650,17),4
+3850 LINE (0,18)-(650,18),15
+3860 LINE (0,19)-(650,19),9
+3870 LINE (0,130)-(650,130),4
+3880 LINE (0,131)-(650,131),15
+3890 LINE (0,132)-(650,132),9
+3900 PTN$="......................."
+3910 PRINT SPACE$(18);"*** Eigenaar en type van cassettebandje ***"
+3920 PRINT:PRINT "         Hier kunt u invoeren van wie het bandje is en het type cassette."
+3930 LOCATE 5,40:PRINT PTN$:LOCATE 6,40:PRINT PTN$
+3940 LOCATE 5,1:INPUT "         Van wie is het bandje       ";VWB$
+3950 LOCATE 7,1:INPUT "         Wat voor type bandje is het ";TC$
+3960 PRINT
+3970 PRINT "         Kloppen de namen die u gekozen heeft (J/N) ?"
+3980 NVWB$=INKEY$
+3990 IF NVWB$="J" OR NVWB$="j" THEN 640
+4000 IF NVWB$="N" OR NVWB$="n" THEN 3940
+4010 IF NVWB$="*" THEN GOTO 640
+4020 GOTO 3980
+4030 ' GEGEVENS WISSEN
+4040 CLS
+4050 LINE (0,17)-(650,17),4
+4060 LINE (0,18)-(650,18),15
+4070 LINE (0,19)-(650,19),4
+4080 LINE (0,117)-(650,117),4
+4090 LINE (0,118)-(650,118),15
+4100 LINE (0,119)-(650,119),4
+4110 PRINT SPACE$(25);"*** Gegevens wissen ***"
+4120 PRINT
+4130 PRINT "         Met deze keuze kunt u de Hoofdtitels, Songtitels,"
+4140 PRINT "         en de Eigenaar wissen."
+4150 PRINT
+4160 BEEP:PRINT "         Wilt u alle gegevens wissen (J/N) ?"
+4170 GW$=INKEY$
+4180 IF GW$="J" OR GW$="j" THEN 4220
+4190 IF GW$="N" OR GW$="n" THEN 640
+4200 IF GW$="*" THEN GOTO 640
+4210 GOTO 4170
+4220 PRINT
+4230 PRINT "         Weet u zeker dat u alle gegevens wilt wissen (J/N) ?"
+4240 ZGW$=INKEY$
+4250 IF ZGW$="J" OR ZGW$="j" THEN RUN
+4260 IF ZGW$="N" OR ZGW$="n" THEN 640
+4270 IF ZGW$="*" THEN GOTO 640
+4280 GOTO 4240
+4290 ' Einde Cassette-Printer v 3.0 listing
+

@@ -1,0 +1,402 @@
+10 CLS:SCREEN 9:WIDTH 80:COLOR 15,16:KEY OFF
+20 LINE (190,50)-(410,50),15
+30 LINE (190,50)-(190,149)
+40 LINE (410,50)-(410,149)
+50 LINE (190,150)-(410,150)
+60 CIRCLE (245,90),17
+70 CIRCLE (245,90),23
+80 CIRCLE (355,90),17
+90 CIRCLE (355,90),23
+100 LINE (223,125)-(377,125)
+110 LINE (214,150)-(223,125)
+120 LINE (378,125)-(388,150)
+130 LINE (185,121)-(185,143)
+140 LINE (416,121)-(416,143)
+150 LINE (185,121)-(190,121)
+160 LINE (185,144)-(190,144)
+170 LINE (416,144)-(410,144)
+180 LINE (416,120)-(410,120)
+190 LINE (200,65)-(400,65)
+200 LINE (200,65)-(200,118)
+210 LINE (400,65)-(400,118)
+220 LINE (200,118)-(400,118)
+230 CIRCLE (245,140),5
+240 CIRCLE (357,140),5
+250 CIRCLE (268,137),4
+260 CIRCLE (332,137),4
+270 LOCATE 10,26:PRINT "A"
+280 PAINT (195,55),8,15
+290 PAINT (260,130),8,15
+300 PAINT (245,140),15,15
+310 PAINT (357,140),15,15
+320 PAINT (268,137),15,15
+330 PAINT (332,137),15,15
+340 PAINT (187,123),8,15
+350 PAINT (415,143),8,15
+360 PAINT (220,80),7,15
+370 PAINT (230,80),15,15
+380 PAINT (370,80),15,15
+390 PAINT (245,90),3,15
+400 PAINT (355,90),3,15
+410 LINE (0,30)-(650,30),4
+420 LINE (0,32)-(650,32),4
+430 LINE (0,31)-(650,31),15
+440 LOCATE 2,28:PRINT "(C) 1992 Gilsoftware":GOTO 560
+450 T$="Cassette Printer v 3.0E"
+460 L=LEN(T$)+32
+470 P$=SPACE$(30)
+480 T$=SPACE$(30)+T$+SPACE$(30)
+490 FOR N=1 TO L
+500 MID$(P$,1,30)=MID$(T$,N,30)
+510 LOCATE 13,24:COLOR 14:PRINT P$
+520 FOR J=0 TO 270:NEXT J:NEXT N
+530 A$=INKEY$
+540 IF A$=" " THEN GOTO 630
+550 GOTO 490
+560 LINE (0,219)-(650,219),4
+570 LINE (0,220)-(650,220),15
+580 LINE (0,221)-(650,221),9
+590 LINE (0,239)-(650,239),4
+600 LINE (0,240)-(650,240),15
+610 LINE (0,241)-(650,241),9:COLOR 15,16
+620 LOCATE 17,25:PRINT "Push spacebar to continue...":GOTO 450:COLOR 15,16
+630 CLS:LOCATE 1,25:COLOR 14:PRINT CHR$(174);CHR$(174);CHR$(174);" CASSETTE PRINTER ";CHR$(175);CHR$(175);CHR$(175)
+640 LINE (0,17)-(650,17),4
+650 LINE (0,18)-(650,18),15
+660 LINE (0,19)-(650,19),9
+670 LINE (0,214)-(650,214),4
+680 LINE (0,215)-(650,215),15
+690 LINE (0,216)-(650,216),9
+700 PRINT
+710 COLOR 14:PRINT SPACE$(13);"(C) 1992 Gilsoftware ";CHR$(196);CHR$(196);" Cassette printer v 3.0E":COLOR 15
+720 PRINT
+730 COLOR 7:PRINT TAB(23);"1 = Input main title(s)"
+740 COLOR 7:PRINT TAB(23);"2 = Input songtitles"
+750 COLOR 7:PRINT TAB(23);"3 = Owner of cassette"
+760 COLOR 7:PRINT TAB(23);"4 = Print on screen or printer"
+770 COLOR 7:PRINT TAB(23);"5 = Save data"
+780 COLOR 7:PRINT TAB(23);"6 = Load data"
+790 COLOR 7:PRINT TAB(23);"7 = Erase data"
+800 COLOR 7:PRINT TAB(21);"ESC = Quit"
+810 COLOR 15:PRINT " Main title 1 : ":COLOR 6:LOCATE 13,17:PRINT TI1$
+820 COLOR 15:PRINT " Main title 2 : ":COLOR 6:LOCATE 14,17:PRINT TI2$
+830 COLOR 15:PRINT " Owner        : ":COLOR 6:LOCATE 15,17:PRINT VWB$:COLOR 15
+840 COLOR 7:LOCATE 21,2:PRINT "Type '*' when you want go to the main menu..."
+850 COLOR 7:LOCATE 23,2:PRINT "Push 'spacebar' to change backgroundcolor...":COLOR 15
+860 KZ$=INKEY$:IF KZ$="" THEN 860
+870 A=A+1:IF A=63 THEN A=0
+880 IF KZ$="1" THEN 1430
+890 IF KZ$="2" THEN 1680
+900 IF KZ$="3" THEN 3550
+910 IF KZ$="4" THEN 2580
+920 IF KZ$="5" THEN 990
+930 IF KZ$="6" THEN 1200
+940 IF KZ$="7" THEN 3750
+950 IF KZ$="8" THEN 2350
+960 IF KZ$=" " THEN COLOR ,A:LOCATE 23,50:PRINT A
+970 IF ASC(KZ$)=27 THEN 2350
+980 GOTO 860
+990 ' SAVE DATA
+1000 CLS
+1010 LOCATE 1,1:PRINT SPACE$(30);"*** Save data ***"
+1020 LINE (0,17)-(650,17),4
+1030 LINE (0,18)-(650,18),15
+1040 LINE (0,19)-(650,19),9
+1050 LINE (0,103)-(650,103),4
+1060 LINE (0,104)-(650,104),15
+1070 LINE (0,105)-(650,105),9
+1080 PRINT:PRINT SPACE$(9);"Here you can give the filename to save the data."
+1090 PRINT:INPUT "         The name of the file ";NF$
+1100 IF NF$="*" OR NF$="" THEN 630
+1110 PRINT:PRINT "         Is the filename right (Y/N) ?"
+1120 KNG$=INKEY$
+1130 IF KNG$="Y" OR KNG$="y" THEN 1170
+1140 IF KNG$="N" OR KNG$="n" THEN 990
+1150 IF KNG$="*" THEN 630
+1160 GOTO 1120
+1170 CLOSE:OPEN NF$ FOR OUTPUT AS#1
+1180 PRINT #1,TI1$;",";TI2$;",";VWB$;",";AT1$;",";AT2$;",";AT3$;",";AT4$;",";AT5$;",";AT6$;",";AT7$;",";AT8$;",";AT9$;",";AT10$;",";AT11$;",";BT1$;",";BT2$;",";BT3$;",";BT4$;",";BT5$;",";BT6$;",";BT7$;",";BT8$;",";BT9$;",";BT10$
+1190 LOCATE 9,20:PRINT SPACE$(33);"Data saved...":FOR GO=0 TO 2500:NEXT GO:GOTO 630
+1200 ' LOAD DATA
+1210 CLS:PRINT SPACE$(31);"*** Load data ***"
+1220 LINE (0,17)-(650,17),4
+1230 LINE (0,18)-(650,18),15
+1240 LINE (0,19)-(650,19),9
+1250 LINE (0,270)-(650,270),4
+1260 LINE (0,271)-(650,271),15
+1270 LINE (0,272)-(650,272),9
+1280 PRINT:PRINT "         Here you can give the filename to load the data."
+1290 PRINT:INPUT "         In which drive do you want to see the files ";FZ$
+1300 IF FZ$="*" OR FZ$="" THEN 630
+1310 PRINT:FILES FZ$
+1320 LOCATE 20,1:PRINT:INPUT "         The name of the file ";NG$
+1330 IF NG$="*" OR NG$="" THEN 630
+1340 LOCATE 22,1:PRINT:PRINT "         Is the filename right (Y/N) ?"
+1350 KNG$=INKEY$
+1360 IF KNG$="Y" OR KNG$="y" THEN 1400
+1370 IF KNG$="N" OR KNG$="n" THEN 1200
+1380 IF KNG$="*" THEN GOTO 630
+1390 GOTO 1350
+1400 CLOSE:OPEN "I" ,#1, NG$
+1410 INPUT #1,TI1$,TI2$,VWB$,AT1$,AT2$,AT3$,AT4$,AT5$,AT6$,AT7$,AT8$,AT9$,AT10$,AT11$,BT1$,BT2$,BT3$,BT4$,BT5$,BT6$,BT7$,BT8$,BT9$,BT10$
+1420 LOCATE 19,20:PRINT SPACE$(33);"Data loaded...":FOR GA=0 TO 2500:NEXT GA:GOTO 630
+1430 ' CHOOSE MAIN TITLE(S)
+1440 CLS
+1450 LINE (0,17)-(650,17),4
+1460 LINE (0,18)-(650,18),15
+1470 LINE (0,19)-(650,19),9
+1480 LINE (0,145)-(650,145),4
+1490 LINE (0,146)-(650,146),15
+1500 LINE (0,147)-(650,147),9
+1510 LOCATE 6,25:PRINT "..................."
+1520 LOCATE 8,25:PRINT "..................."
+1530 LOCATE 1,26:PRINT "*** Input Main title ***"
+1540 PRINT
+1550 PRINT "         You can see the main title when it is in a cassette-box."
+1560 PRINT "         The title musn't be longer than 19 characters.
+1570 PRINT
+1580 INPUT "         Type titel 1 ";TI1$
+1590 PRINT
+1600 INPUT "         Type titel 2 ";TI2$
+1610 PRINT
+1620 PRINT "         Are the title(s) you choose right (Y/N) ?"
+1630 TGK$=INKEY$
+1640 IF TGK$="Y" OR TGK$="Y" THEN 630
+1650 IF TGK$="N" OR TGK$="n" THEN 1440
+1660 IF TGK$="*" THEN GOTO 630
+1670 GOTO 1630
+1680 ' CHOOSE SONGTITLES
+1690 CLS
+1700 LINE (0,17)-(650,17),4
+1710 LINE (0,18)-(650,18),15
+1720 LINE (0,19)-(650,19),9
+1730 LINE (0,240)-(650,240),4
+1740 LINE (0,241)-(650,241),15
+1750 LINE (0,242)-(650,242),9
+1760 PRINT SPACE$(25);"*** Input songtitles ***"
+1770 PRINT
+1780 PRINT "   You maximal can type 11 titles each side (A/B)."
+1790 PRINT "   A title musn't be longer than 22 characters typen. Push enter when you have     enough titles."
+1800 PRINT:R$="......................"
+1810 LOCATE 6,24:PRINT R$
+1820 LOCATE 7,24:PRINT R$
+1830 LOCATE 8,24:PRINT R$
+1840 LOCATE 9,24:PRINT R$
+1850 LOCATE 10,24:PRINT R$
+1860 LOCATE 11,24:PRINT R$
+1870 LOCATE 12,24:PRINT R$
+1880 LOCATE 13,24:PRINT R$
+1890 LOCATE 14,24:PRINT R$
+1900 LOCATE 15,24:PRINT R$
+1910 LOCATE 16,24:PRINT R$
+1920 LOCATE 6,3:INPUT " side A:   title 1 ";AT1$
+1930 INPUT "             title 2 ";AT2$
+1940 INPUT "             title 3 ";AT3$
+1950 INPUT "             title 4 ";AT4$
+1960 INPUT "             title 5 ";AT5$
+1970 INPUT "             title 6 ";AT6$
+1980 INPUT "             title 7 ";AT7$
+1990 INPUT "             title 8 ";AT8$
+2000 INPUT "             title 9 ";AT9$
+2010 INPUT "             title 10";AT10$
+2020 INPUT "             title 11";AT11$
+2030 CLS:PRINT SPACE$(25);"*** Input songtitles ***"
+2040 LINE (0,17)-(650,17),4
+2050 LINE (0,18)-(650,18),15
+2060 LINE (0,19)-(650,19),9
+2070 LINE (0,240)-(650,240),4
+2080 LINE (0,241)-(650,241),15
+2090 LINE (0,242)-(650,242),9
+2100 PRINT:PRINT "         Here you can type the titles side B."
+2110 LOCATE 6,24:PRINT R$
+2120 LOCATE 7,24:PRINT R$
+2130 LOCATE 8,24:PRINT R$
+2140 LOCATE 9,24:PRINT R$
+2150 LOCATE 10,24:PRINT R$
+2160 LOCATE 11,24:PRINT R$
+2170 LOCATE 12,24:PRINT R$
+2180 LOCATE 13,24:PRINT R$
+2190 LOCATE 14,24:PRINT R$
+2200 LOCATE 15,24:PRINT R$
+2210 LOCATE 16,24:PRINT R$
+2220 LOCATE 6,3:INPUT " side B:   title 1 ";BT1$
+2230 INPUT "             title 2 ";BT2$
+2240 INPUT "             title 3 ";BT3$
+2250 INPUT "             title 4 ";BT4$
+2260 INPUT "             title 5 ";BT5$
+2270 INPUT "             title 6 ";BT6$
+2280 INPUT "             title 7 ";BT7$
+2290 INPUT "             title 8 ";BT8$
+2300 INPUT "             title 9 ";BT9$
+2310 INPUT "             title 10";BT10$
+2320 INPUT "             title 11";BT11$
+2330 PRINT
+2340 GOTO 630
+2350 ' QUIT
+2360 CLS
+2370 LINE (0,17)-(650,17),4
+2380 LINE (0,18)-(650,18),15
+2390 LINE (0,19)-(650,19),4
+2400 LINE (0,80)-(650,80),4
+2410 LINE (0,81)-(650,81),15
+2420 LINE (0,82)-(650,82),4
+2430 PRINT SPACE$(30);"*** Quit ***"
+2440 PRINT:PRINT "         Do you really want to quit (Y/N) ?"
+2450 SP$=INKEY$
+2460 IF SP$="Y" OR SP$="y" THEN 2520
+2470 IF SP$="N" OR SP$="n" THEN 2500
+2480 IF SP$="*" THEN GOTO 630
+2490 GOTO 2450
+2500 PRINT:PRINT "         The data isn't lost 22"
+2510 FOR GEG=0 TO 3000:NEXT GEG:GOTO 630
+2520 PRINT:PRINT "         Do you want to go to SYSTEM (Y/N) ?"
+2530 NS$=INKEY$
+2540 IF NS$="Y" OR NS$="y" THEN CLS:LOCATE 10,22:PRINT "Thanks for running Cassette Printer...":FOR W=0 TO 5000:NEXT:SYSTEM
+2550 IF NS$="N" OR NS$="n" THEN SCREEN 0:KEY ON:KEY 6,"SYSTEM"+CHR$(13):CLS:PRINT "GW-BASIC 3.32":PRINT "(C) Copyright Microsoft 1983,1984,1985,1986,1987,1988,1989":PRINT "60300 Bytes vrij":NEW:END
+2560 IF NS$="*" THEN GOTO 630
+2570 GOTO 2530
+2580 ' CASSETTE TO PRINTER OR SCREEN
+2590 CLS
+2600 LINE (0,17)-(650,17),4
+2610 LINE (0,18)-(650,18),15
+2620 LINE (0,19)-(650,19),9
+2630 LINE (0,100)-(650,100),4
+2640 LINE (0,101)-(650,101),15
+2650 LINE (0,102)-(650,102),9
+2660 PRINT SPACE$(24);"*** Print to screen or printer ***"
+2670 PRINT
+2680 PRINT "         Push 'P' if you want to print."
+2690 PRINT "         If you push 'S' then you see the example on the screen."
+2700 PRINT "         Choose 'P' or 'S'."
+2710 PS$=INKEY$
+2720 IF PS$="P" OR PS$="p" THEN 2760
+2730 IF PS$="S" OR PS$="s" THEN 3140
+2740 IF PS$="*" THEN GOTO 630
+2750 GOTO 2710
+2760 ' PRINTEN
+2770 PRINT:PRINT "         One moment please..."
+2780 LPRINT CHR$(27);CHR$(120);CHR$(49);"      :---------------------------------------:"
+2790 LPRINT"      :         (C) 1992 GILSOFTWARE          :"
+2800 LPRINT"      :                                       :"
+2810 LPRINT"      :                                       :"
+2820 LPRINT"      :---------------------------------------:"
+2830 LPRINT"          ";CHR$(27);CHR$(87);CHR$(49);TI1$
+2840 LPRINT"     ";TI2$;CHR$(27);CHR$(87);CHR$(48)
+2850 LPRINT CHR$(27);CHR$(120);CHR$(49);"      :---------------------------------------:"
+2860 LPRINT"      : SIDE A:            SIDE B:            :"
+2870 LPRINT"      : ------------------ ------------------ :"
+2880 LPRINT CHR$(27);CHR$(33);CHR$(17);"       : ";AT1$;TAB(34);BT1$;TAB(57);":"
+2890 LPRINT"       : ";AT2$;TAB(33);BT2$;TAB(56);":"
+2900 LPRINT"       : ";AT3$;TAB(33);BT3$;TAB(56);":"
+2910 LPRINT"       : ";AT4$;TAB(33);BT4$;TAB(56);":"
+2920 LPRINT"       : ";AT5$;TAB(33);BT5$;TAB(56);":"
+2930 LPRINT"       : ";AT6$;TAB(33);BT6$;TAB(56);":"
+2940 LPRINT"       : ";AT7$;TAB(33);BT7$;TAB(56);":"
+2950 LPRINT"       : ";AT8$;TAB(33);BT8$;TAB(56);":"
+2960 LPRINT"       : ";AT9$;TAB(33);BT9$;TAB(56);":"
+2970 LPRINT"       : ";AT10$;TAB(33);BT10$;TAB(56);":"
+2980 LPRINT"       : ";AT11$;TAB(33);BT11$;TAB(56);":"
+2990 LPRINT CHR$(27);CHR$(64);CHR$(27);CHR$(120);CHR$(49);"      :";TAB(50);":"
+3000 LPRINT"      :_______________________________________:"
+3010 LPRINT"      :                                       :"
+3020 LPRINT"      :  Mono       O                         :"
+3030 LPRINT"      :  Stereo     O                         :"
+3040 LPRINT"      :                                       :"
+3050 LPRINT"      :  Master     O                         :"
+3060 LPRINT"      :  Copy       O                         :"
+3070 LPRINT"      :  Date       ";DATE$;"                :"
+3080 LPRINT"      :  Time       ";TIME$;"                  :"
+3090 LPRINT"      :  Owner    : ";VWB$
+3100 LPRINT"      :                                       :"
+3110 LPRINT"      :                                       :"
+3120 LPRINT"      :_______________________________________:"
+3130 GOTO 630
+3140 ' SCREEN
+3150 LOCATE 10,14:PRINT "|-----------------------------------------------|"
+3160 PRINT TAB(14);"|            (C) 1992 GILSOFTWARE               |"
+3170 PRINT TAB(14);"|                                               |"
+3180 PRINT TAB(14);"|                                               |"
+3190 PRINT TAB(14);"|-----------------------------------------------|"
+3200 PRINT TAB(14);"|           ";TI1$;TAB(62);"|"
+3210 PRINT TAB(14);"|           ";TI2$;TAB(62);"|"
+3220 PRINT TAB(14);"|-----------------------------------------------|"
+3230 PRINT TAB(14);"| SIDE A:                SIDE B:                |"
+3240 PRINT TAB(14);"| ---------------------- ---------------------- |"
+3250 PRINT TAB(14);"| ";AT1$;TAB(39);BT1$;TAB(62);"|"
+3260 PRINT TAB(14);"| ";AT2$;TAB(39);BT2$;TAB(62);"|"
+3270 PRINT TAB(14);"| ";AT3$;TAB(39);BT3$;TAB(62);"|"
+3280 PRINT TAB(14);"| ";AT4$;TAB(39);BT4$;TAB(62);"|"
+3290 PRINT TAB(14);"| ";AT5$;TAB(39);BT5$;TAB(62);"|"
+3300 PRINT TAB(14);"| ";AT6$;TAB(39);BT6$;TAB(62);"|"
+3310 PRINT TAB(14);"| ";AT7$;TAB(39);BT7$;TAB(62);"|"
+3320 PRINT TAB(14);"| ";AT8$;TAB(39);BT8$;TAB(62);"|"
+3330 PRINT TAB(14);"| ";AT9$;TAB(39);BT9$;TAB(62);"|"
+3340 PRINT TAB(14);"| ";AT10$;TAB(39);BT10$;TAB(62);"|"
+3350 PRINT TAB(14);"| ";AT11$;TAB(39);BT11$;TAB(62);"|"
+3360 PRINT TAB(14);"|                                               |"
+3370 PRINT TAB(14);"|_______________________________________________|"
+3380 PRINT TAB(14);"|                                               |"
+3390 PRINT TAB(14);"|  Stereo     O                                 |"
+3400 PRINT TAB(14);"|  Mono       O                                 |"
+3410 PRINT TAB(14);"|                                               |"
+3420 PRINT TAB(14);"|  Master     O                                 |"
+3430 PRINT TAB(14);"|  Copy       O                                 |"
+3440 PRINT TAB(14);"|  Date       ";DATE$;"                        |"
+3450 PRINT TAB(14);"|  Time       ";TIME$;"                          |"
+3460 PRINT TAB(14);"|  Owner    : ";VWB$;TAB(62);"|"
+3470 PRINT TAB(14);"|                                               |"
+3480 PRINT TAB(14);"|                                               |"
+3490 PRINT TAB(14);"|_______________________________________________|"
+3500 PRINT
+3510 PRINT TAB(35);"Push 'M' ..."
+3520 LI$=INKEY$
+3530 IF LI$="M" OR LI$="m" OR LI$="*" THEN 630
+3540 GOTO 3520
+3550 ' OWNER OF CASSETTE
+3560 CLS
+3570 LINE (0,17)-(650,17),4
+3580 LINE (0,18)-(650,18),15
+3590 LINE (0,19)-(650,19),9
+3600 LINE (0,103)-(650,103),4
+3610 LINE (0,104)-(650,104),15
+3620 LINE (0,105)-(650,105),9
+3630 PTN$="......................."
+3640 PRINT SPACE$(27);"*** Owner of cassette ***"
+3650 PRINT:PRINT "         Here you can input the owner of the cassette."
+3660 LOCATE 5,29:PRINT PTN$
+3670 LOCATE 5,1:INPUT "         Who is the owner ";VWB$
+3680 PRINT
+3690 PRINT "         Is the name right you choose (Y/N) ?"
+3700 NVWB$=INKEY$
+3710 IF NVWB$="Y" OR NVWB$="y" THEN 630
+3720 IF NVWB$="N" OR NVWB$="n" THEN 3550
+3730 IF NVWB$="*" THEN GOTO 630
+3740 GOTO 3700
+3750 ' ERASE DATA
+3760 CLS
+3770 LINE (0,17)-(650,17),4
+3780 LINE (0,18)-(650,18),15
+3790 LINE (0,19)-(650,19),4
+3800 LINE (0,117)-(650,117),4
+3810 LINE (0,118)-(650,118),15
+3820 LINE (0,119)-(650,119),4
+3830 PRINT SPACE$(30);"*** Erase data ***"
+3840 PRINT
+3850 PRINT "         Now you can erase all the Maintitles, Songtitles,"
+3860 PRINT "         and the owner."
+3870 PRINT
+3880 BEEP:PRINT "         Do you really want to erase the data (Y/N) ?"
+3890 GW$=INKEY$
+3900 IF GW$="Y" OR GW$="y" THEN 3940
+3910 IF GW$="N" OR GW$="n" THEN 630
+3920 IF GW$="*" THEN GOTO 630
+3930 GOTO 3890
+3940 PRINT
+3950 PRINT "         Are you sure you want to erase all this (Y/N) ?"
+3960 ZGW$=INKEY$
+3970 IF ZGW$="Y" OR ZGW$="y" THEN RUN
+3980 IF ZGW$="N" OR ZGW$="n" THEN 630
+3990 IF ZGW$="*" THEN GOTO 630
+4000 GOTO 3960
+4010 ' End Cassette-Printer v 3.0E listing
+

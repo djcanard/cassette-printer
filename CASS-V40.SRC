@@ -1,0 +1,396 @@
+10 CLS:KEY OFF:SCREEN 9:WIDTH 80:A=8:SST=120:COLOR 15,A
+20 LINE (190,50)-(410,50),15
+30 LINE (190,50)-(190,149)
+40 LINE (410,50)-(410,149)
+50 LINE (190,150)-(410,150)
+60 CIRCLE (245,90),17
+70 CIRCLE (245,90),23
+80 CIRCLE (355,90),17
+90 CIRCLE (355,90),23
+100 LINE (223,125)-(377,125)
+110 LINE (214,150)-(223,125)
+120 LINE (378,125)-(388,150)
+130 LINE (185,121)-(185,143)
+140 LINE (416,121)-(416,143)
+150 LINE (185,121)-(190,121)
+160 LINE (185,144)-(190,144)
+170 LINE (416,144)-(410,144)
+180 LINE (416,120)-(410,120)
+190 LINE (200,65)-(400,65)
+200 LINE (200,65)-(200,118)
+210 LINE (400,65)-(400,118)
+220 LINE (200,118)-(400,118)
+230 CIRCLE (245,140),5
+240 CIRCLE (357,140),5
+250 CIRCLE (268,137),4
+260 CIRCLE (332,137),4
+270 LOCATE 10,26:PRINT "A"
+280 PAINT (195,55),8,15
+290 PAINT (260,130),8,15
+300 PAINT (245,140),15,15
+310 PAINT (357,140),15,15
+320 PAINT (268,137),15,15
+330 PAINT (332,137),15,15
+340 PAINT (187,123),8,15
+350 PAINT (415,143),8,15
+360 PAINT (220,80),7,15
+370 PAINT (230,80),15,15
+380 PAINT (370,80),15,15
+390 PAINT (245,90),3,15
+400 PAINT (355,90),3,15
+410 LINE (0,30)-(650,30),4
+420 LINE (0,32)-(650,32),9
+430 LINE (0,31)-(650,31),15
+440 T$="Cassette Printer v 4.0"
+450 LOCATE 2,30:PRINT "(C) 1996 Ducksoft":GOTO 560
+460 L=LEN(T$)+32
+470 P$=SPACE$(30)
+480 T$=P$+T$+P$
+490 FOR N=1 TO L
+500 MID$(P$,1,30)=MID$(T$,N,30)
+510 LOCATE 13,24:COLOR 14:PRINT P$
+520 FOR J=0 TO 8000:NEXT J:NEXT N
+530 A$=INKEY$
+540 IF A$=" " THEN GOTO 640
+550 GOTO 490
+560 LINE (0,219)-(650,219),4
+570 LINE (0,220)-(650,220),15
+580 LINE (0,221)-(650,221),9
+590 LINE (0,239)-(650,239),4
+600 LINE (0,240)-(650,240),15
+610 LINE (0,241)-(650,241),9:COLOR 15,8
+620 LOCATE 17,18:PRINT "Druk op de spatiebalk om verder te gaan..."
+630 GOTO 460
+640 COLOR 15,A:CLS:LOCATE 1,25:COLOR 14:PRINT CHR$(174);CHR$(174);CHR$(174);" CASSETTE PRINTER ";CHR$(175);CHR$(175);CHR$(175)
+650 LINE (0,17)-(650,17),4
+660 LINE (0,18)-(650,18),15
+670 LINE (0,19)-(650,19),9
+680 LINE (0,335)-(650,335),4
+690 LINE (0,336)-(650,336),15
+700 LINE (0,337)-(650,337),9
+710 COLOR 14:PRINT:PRINT SPACE$(16);"(C) 1996 Ducksoft ";CHR$(196);CHR$(196);" Cassette printer v 4.0":COLOR 15
+720 COLOR 7:PRINT:PRINT TAB(23);"1 = Hoofdtitels invoeren"
+730 COLOR 7:PRINT TAB(23);"2 = Songtitels invoeren"
+740 COLOR 7:PRINT TAB(23);"3 = Eigenaar en type van cassettebandje invoeren"
+750 COLOR 7:PRINT TAB(23);"4 = Voorbeeld op scherm of uitprinten"
+760 COLOR 7:PRINT TAB(23);"5 = Gegevens opslaan"
+770 COLOR 7:PRINT TAB(23);"6 = Gegevens laden"
+780 COLOR 7:PRINT TAB(23);"7 = Gegevens wissen"
+790 COLOR 7:PRINT TAB(21);"ESC = Stoppen"
+800 'COLOR 15:PRINT " Hoofdtitel 1 : ":COLOR 6:LOCATE 13,17:PRINT TI1$
+810 'COLOR 15:PRINT " Hoofdtitel 2 : ":COLOR 6:LOCATE 14,17:PRINT TI2$
+820 'COLOR 15:PRINT " Eigenaar is  : ":COLOR 6:LOCATE 15,17:PRINT VWB$
+830 'COLOR 15:PRINT " Type cass.   : ":COLOR 6:LOCATE 16,17:PRINT TC$
+840 COLOR 15:LOCATE 13,2:PRINT "Songtitel 1 :":COLOR 6:LOCATE 13,16:PRINT AT1$
+850 COLOR 15:LOCATE 14,2:PRINT "Songtitel 2 :":COLOR 6:LOCATE 14,16:PRINT AT2$
+860 COLOR 15:LOCATE 15,2:PRINT "Songtitel 3 :":COLOR 6:LOCATE 15,16:PRINT AT3$
+870 COLOR 15:LOCATE 16,2:PRINT "Songtitel 4 :":COLOR 6:LOCATE 16,16:PRINT AT4$
+880 COLOR 15:LOCATE 17,2:PRINT "Songtitel 5 :":COLOR 6:LOCATE 17,16:PRINT AT5$
+890 COLOR 15:LOCATE 18,2:PRINT "Songtitel 6 :":COLOR 6:LOCATE 18,16:PRINT AT6$
+900 COLOR 15:LOCATE 19,2:PRINT "Songtitel 7 :":COLOR 6:LOCATE 19,16:PRINT AT7$
+910 COLOR 15:LOCATE 20,2:PRINT "Songtitel 8 :":COLOR 6:LOCATE 20,16:PRINT AT8$
+920 COLOR 15:LOCATE 21,2:PRINT "Songtitel 9 :":COLOR 6:LOCATE 21,16:PRINT AT9$
+930 COLOR 15:LOCATE 22,2:PRINT "Songtitel 10:":COLOR 6:LOCATE 22,16:PRINT AT10$
+940 COLOR 15:LOCATE 23,2:PRINT "Songtitel 11:":COLOR 6:LOCATE 23,16:PRINT AT11$
+950 COLOR 15:LOCATE 13,44:PRINT "Songtitel 1 :":COLOR 6:LOCATE 13,58:PRINT BT1$
+960 COLOR 15:LOCATE 14,44:PRINT "Songtitel 2 :":COLOR 6:LOCATE 14,58:PRINT BT2$
+970 COLOR 15:LOCATE 15,44:PRINT "Songtitel 3 :":COLOR 6:LOCATE 15,58:PRINT BT3$
+980 COLOR 15:LOCATE 16,44:PRINT "Songtitel 4 :":COLOR 6:LOCATE 16,58:PRINT BT4$
+990 COLOR 15:LOCATE 17,44:PRINT "Songtitel 5 :":COLOR 6:LOCATE 17,58:PRINT BT5$
+1000 COLOR 15:LOCATE 18,44:PRINT "Songtitel 6 :":COLOR 6:LOCATE 18,58:PRINT BT6$
+1010 COLOR 15:LOCATE 19,44:PRINT "Songtitel 7 :":COLOR 6:LOCATE 19,58:PRINT BT7$
+1020 COLOR 15:LOCATE 20,44:PRINT "Songtitel 8 :":COLOR 6:LOCATE 20,58:PRINT BT8$
+1030 COLOR 15:LOCATE 21,44:PRINT "Songtitel 9 :":COLOR 6:LOCATE 21,58:PRINT BT9$
+1040 COLOR 15:LOCATE 22,44:PRINT "Songtitel 10:":COLOR 6:LOCATE 22,58:PRINT BT10$
+1050 COLOR 15:LOCATE 23,44:PRINT "Songtitel 11:":COLOR 6:LOCATE 23,58:PRINT BT11$
+1060 S=TIMER
+1070 KZ$=INKEY$
+1080 COLOR 12:LOCATE 1,2:PRINT DATE$:LOCATE 1,72:PRINT TIME$:COLOR 15
+1090 IF A=63 THEN A=0
+1100 IF KZ$="1" THEN 1770:S=TIMER
+1110 IF KZ$="2" THEN 1970:S=TIMER
+1120 IF KZ$="3" THEN 3580:S=TIMER
+1130 IF KZ$="4" THEN 2600:S=TIMER
+1140 IF KZ$="5" THEN 1290:S=TIMER
+1150 IF KZ$="6" THEN 1540:S=TIMER
+1160 IF KZ$="7" THEN 3770:S=TIMER
+1170 IF KZ$=CHR$(27) THEN 2420:S=TIMER
+1180 IF KZ$=" " THEN A=A+1:COLOR ,A:S=TIMER
+1190 IF F-S>SST THEN 1230
+1200 IF KZ$="9" THEN 2420
+1210 F=TIMER
+1220 GOTO 1070
+1230 CLS:COLOR 15,0:LOCATE 10,25:PRINT "Druk op de 'spatiebalk'..."
+1240 LOCATE 8,28:COLOR 7:PRINT "(C) 1996 Ducksoft"
+1250 LOCATE 12,20:PRINT "Screen-Saver Cassette Printer v 4.0"
+1260 T$=INKEY$
+1270 IF T$=" " THEN GOTO 640
+1280 GOTO 1260
+1290 ' GEGEVENS OPSLAAN
+1300 CLS
+1310 LOCATE 1,1:PRINT SPACE$(26);"*** Gegevens opslaan ***"
+1320 LINE (0,17)-(650,17),4
+1330 LINE (0,18)-(650,18),15
+1340 LINE (0,19)-(650,19),9
+1350 LINE (0,146)-(650,146),4
+1360 LINE (0,147)-(650,147),15
+1370 LINE (0,148)-(650,148),9
+1380 ON ERROR GOTO 1460:PRINT:PRINT SPACE$(9);"Hier kunt u de naam ingeven van de file die u wilt 'saven'."
+1390 LOCATE 5,10:INPUT "Wat wordt de naam van de file ";NF$
+1400 LOCATE 7,10:PRINT "Klopt de naam die u gegeven heeft (J/N) ?"
+1410 KNG$=INKEY$
+1420 IF KNG$="J" OR KNG$="j" THEN 1510
+1430 IF KNG$="N" OR KNG$="n" THEN 1390
+1440 IF NF$="*" THEN 640
+1450 GOTO 1410
+1460 BEEP:LOCATE 9,10:PRINT "De naam die u heeft ingevoerd is niet toegestaan !"
+1470 LOCATE 10,10:PRINT "Druk op de 'N' om de nieuwe naam in te voeren."
+1480 NT$=INKEY$
+1490 IF NT$="N" OR NT$="n" THEN GOTO 1300
+1500 GOTO 1480
+1510 CLOSE:OPEN NF$ FOR OUTPUT AS#1
+1520 PRINT #1,TI1$;",";TI2$;",";TC$;",";VWB$;",";AT1$;",";AT2$;",";AT3$;",";AT4$;",";AT5$;",";AT6$;",";AT7$;",";AT8$;",";AT9$;",";AT10$;",";AT11$;",";BT1$;",";BT2$;",";BT3$;",";BT4$;",";BT5$;",";BT6$;",";BT7$;",";BT8$;",";BT9$;",";BT10$;","BT11$
+1530 GOTO 640
+1540 ' GEGEVENS LADEN
+1550 CLS:PRINT SPACE$(27);"*** Gegevens laden ***"
+1560 LINE (0,17)-(650,17),4
+1570 LINE (0,18)-(650,18),15
+1580 LINE (0,19)-(650,19),9
+1590 LINE (0,270)-(650,270),4
+1600 LINE (0,271)-(650,271),15
+1610 LINE (0,272)-(650,272),9
+1620 ON ERROR GOTO 1760:LOCATE 3,9:PRINT "Hier kunt u de naam ingeven van het bestand dat u wilt ophalen."
+1630 LOCATE 5,9:INPUT "Op welke drive wilt u de bestanden zien (C:) ";FZ$
+1640 IF FZ$="" THEN FZ$="C:"
+1650 PRINT:FILES FZ$
+1660 LOCATE 21,9:INPUT "Wat is de naam van het bestand ";NG$
+1670 LOCATE 23,9:PRINT "Klopt de naam die u gegeven heeft (J/N) ?"
+1680 KNG$=INKEY$
+1690 IF KNG$="J" OR KNG$="j" THEN 1730
+1700 IF KNG$="N" OR KNG$="n" THEN 1660
+1710 IF NG$="*" THEN 640
+1720 GOTO 1680
+1730 CLOSE:OPEN "I" ,#1, NG$
+1740 INPUT #1,TI1$,TI2$,TC$,VWB$,AT1$,AT2$,AT3$,AT4$,AT5$,AT6$,AT7$,AT8$,AT9$,AT10$,AT11$,BT1$,BT2$,BT3$,BT4$,BT5$,BT6$,BT7$,BT8$,BT9$,BT10$,BT11$
+1750 GOTO 640
+1760 BEEP:GOTO 1540
+1770 ' KIES HOOFDTITEL(S)
+1780 CLS
+1790 LINE (0,17)-(650,17),4
+1800 LINE (0,18)-(650,18),15
+1810 LINE (0,19)-(650,19),9
+1820 LINE (0,145)-(650,145),4
+1830 LINE (0,146)-(650,146),15
+1840 LINE (0,147)-(650,147),9
+1850 LOCATE 6,27:PRINT "תתתתתתתתתתתתתתתתתתת"
+1860 LOCATE 8,27:PRINT "תתתתתתתתתתתתתתתתתתת"
+1870 LOCATE 1,23:PRINT "*** Hoofdtitel invoeren ***"
+1880 LOCATE 3,9:PRINT "Deze titel ziet u als het bandje in een rek staat."
+1890 LOCATE 4,9:PRINT "De titel mag niet langer zijn als 19 karakters.
+1900 LOCATE 6,7:INPUT "Wat is de titel   ";TI1$
+1910 LOCATE 8,7:INPUT "Welke artiest(en) ";TI2$
+1920 LOCATE 10,7:PRINT "Kloppen de titels die u gekozen heeft (J/N) ?"
+1930 TGK$=INKEY$
+1940 IF TGK$="J" OR TGK$="j" THEN 640
+1950 IF TGK$="N" OR TGK$="n" THEN 1780
+1960 GOTO 1930
+1970 ' KIES SONGTITELS
+1980 CLS
+1990 LINE (0,17)-(650,17),4
+2000 LINE (0,18)-(650,18),15
+2010 LINE (0,19)-(650,19),9
+2020 LINE (0,240)-(650,240),4
+2030 LINE (0,241)-(650,241),15
+2040 LINE (0,242)-(650,242),9
+2050 PRINT SPACE$(22);"*** Songtitels invoeren ***"
+2060 PRINT:PRINT "   U kunt maximaal 11 titels kiezen per kant (A/B)."
+2070 PRINT "   Per titel kunt u 22 karakters typen."
+2080 R$="תתתתתתתתתתתתתתתתתתתתתת"
+2090 PRINT:FOR PL=6 TO 16:LOCATE PL,24:PRINT R$:NEXT PL
+2100 LOCATE 6,3:INPUT " kant A:   titel 1 ";AT1$
+2110 INPUT "             titel 2 ";AT2$
+2120 INPUT "             titel 3 ";AT3$
+2130 INPUT "             titel 4 ";AT4$
+2140 INPUT "             titel 5 ";AT5$
+2150 INPUT "             titel 6 ";AT6$
+2160 INPUT "             titel 7 ";AT7$
+2170 INPUT "             titel 8 ";AT8$
+2180 INPUT "             titel 9 ";AT9$
+2190 INPUT "             titel 10";AT10$
+2200 INPUT "             titel 11";AT11$
+2210 CLS:PRINT SPACE$(22);"*** Songtitels invoeren ***"
+2220 LINE (0,17)-(650,17),4
+2230 LINE (0,18)-(650,18),15
+2240 LINE (0,19)-(650,19),9
+2250 LINE (0,240)-(650,240),4
+2260 LINE (0,241)-(650,241),15
+2270 LINE (0,242)-(650,242),9
+2280 PRINT:PRINT "         Hier kunt u de titels invoeren voor kant B."
+2290 PRINT:FOR PL=6 TO 16:LOCATE PL,24:PRINT R$:NEXT PL
+2300 LOCATE 6,3:INPUT " kant B:   titel 1 ";BT1$
+2310 INPUT "             titel 2 ";BT2$
+2320 INPUT "             titel 3 ";BT3$
+2330 INPUT "             titel 4 ";BT4$
+2340 INPUT "             titel 5 ";BT5$
+2350 INPUT "             titel 6 ";BT6$
+2360 INPUT "             titel 7 ";BT7$
+2370 INPUT "             titel 8 ";BT8$
+2380 INPUT "             titel 9 ";BT9$
+2390 INPUT "             titel 10";BT10$
+2400 INPUT "             titel 11";BT11$
+2410 GOTO 640
+2420 ' STOPPEN
+2430 CLS
+2440 LINE (0,17)-(650,17),4
+2450 LINE (0,18)-(650,18),15
+2460 LINE (0,19)-(650,19),4
+2470 LINE (0,80)-(650,80),4
+2480 LINE (0,81)-(650,81),15
+2490 LINE (0,82)-(650,82),4
+2500 PRINT SPACE$(28);"*** Stoppen ***"
+2510 LOCATE 3,9:PRINT "Wilt u echt stoppen (ESC) ?"
+2520 SP$=INKEY$
+2530 IF SP$=CHR$(27) THEN 2550
+2540 GOTO 2520
+2550 LOCATE 5,9:PRINT "Wilt u meteen naar het OS (J/N) ?"
+2560 NS$=INKEY$
+2570 IF NS$="J" OR NS$="j" THEN SYSTEM
+2580 IF NS$="N" OR NS$="n" THEN SCREEN 0:KEY ON:NEW:END
+2590 GOTO 2560
+2600 ' UITVOEREN VAN HOESJE
+2610 CLS
+2620 LINE (0,17)-(650,17),4
+2630 LINE (0,18)-(650,18),15
+2640 LINE (0,19)-(650,19),9
+2650 LINE (0,100)-(650,100),4
+2660 LINE (0,101)-(650,101),15
+2670 LINE (0,102)-(650,102),9
+2680 PRINT SPACE$(24);"*** Uitvoeren van hoesje ***"
+2690 PRINT
+2700 LOCATE 3,9:PRINT "Als u op de 'P' drukt gaat hij printen."
+2710 LOCATE 4,9:PRINT "Als u op de 'S' drukt laat hij het voorbeeld op het scherm zien."
+2720 LOCATE 6,9:PRINT "Druk op de 'P' of 'S'."
+2730 PS$=INKEY$
+2740 IF PS$="P" OR PS$="p" THEN GOTO 2780
+2750 IF PS$="S" OR PS$="s" THEN 3170
+2760 GOTO 2730
+2770 ' PRINTEN
+2780 LOCATE 7,9:PRINT "Een momentje aub...                  "
+2790 ON ERROR GOTO 2800:GOTO 2810
+2800 LOCATE 7,9:PRINT "Heeft u uw printer goed aangesloten ?":GOTO 2700
+2810 LPRINT CHR$(27);CHR$(64);CHR$(27);CHR$(120);CHR$(49);".---------------------------------------."
+2820 LPRINT"            (C) 1996 DUCKSOFT"
+2830 LPRINT".                                       ."
+2840 LPRINT"           ";TC$
+2850 LPRINT".---------------------------------------."
+2860 LPRINT"  ";CHR$(27);CHR$(87);CHR$(49);TI1$
+2870 LPRINT" ";TI2$;CHR$(27);CHR$(87);CHR$(48)
+2880 LPRINT CHR$(27);CHR$(120);CHR$(49);".---------------------------------------."
+2890 LPRINT"  KANT A:            KANT B:"
+2900 LPRINT". ------------------ ------------------ ."
+2910 LPRINT CHR$(27);CHR$(33);CHR$(17);". ";AT1$;TAB(27);BT1$;TAB(50);"."
+2920 LPRINT"  ";AT2$;TAB(26);BT2$;TAB(49);" "
+2930 LPRINT". ";AT3$;TAB(26);BT3$;TAB(49);"."
+2940 LPRINT"  ";AT4$;TAB(26);BT4$;TAB(49);" "
+2950 LPRINT". ";AT5$;TAB(26);BT5$;TAB(49);"."
+2960 LPRINT"  ";AT6$;TAB(26);BT6$;TAB(49);" "
+2970 LPRINT". ";AT7$;TAB(26);BT7$;TAB(49);"."
+2980 LPRINT"  ";AT8$;TAB(26);BT8$;TAB(49);" "
+2990 LPRINT". ";AT9$;TAB(26);BT9$;TAB(49);"."
+3000 LPRINT"  ";AT10$;TAB(26);BT10$;TAB(49);" "
+3010 LPRINT". ";AT11$;TAB(26);BT11$;TAB(49);"."
+3020 LPRINT
+3030 LPRINT CHR$(27);CHR$(64);CHR$(27);CHR$(120);CHR$(49);"._______________________________________."
+3040 LPRINT
+3050 LPRINT".  Mono / Stereo                        ."
+3060 LPRINT"   Dolby off / B / C"
+3070 LPRINT".                                       ."
+3080 LPRINT
+3090 LPRINT".                                       ."
+3100 LPRINT"   Datum        ";DATE$
+3110 LPRINT".                                       ."
+3120 LPRINT"   Eigenaar   : ";VWB$
+3130 LPRINT"   Merk cass. : ";TC$
+3140 LPRINT".                                       ."
+3150 LPRINT"._______________________________________."
+3160 GOTO 640
+3170 ' SCHERM
+3180 LOCATE 10,14:PRINT ".------------------------------------------------."
+3190 PRINT TAB(14);"|             (C) 1996 DUCKSOFT                  |"
+3200 PRINT TAB(14);"|                                                |"
+3210 PRINT TAB(14);"|                                                |"
+3220 PRINT TAB(14);"|------------------------------------------------|"
+3230 PRINT " Breed -->":LOCATE 15,14:PRINT "| ";TI1$;TAB(63);"|"
+3240 PRINT TAB(14);"| ";TI2$;TAB(63);"|"
+3250 PRINT TAB(14);"|------------------------------------------------|"
+3260 PRINT TAB(14);"| KANT A:                 KANT B:                |"
+3270 PRINT TAB(14);"| ----------------------  ---------------------- |"
+3280 PRINT " Pica -->":LOCATE 20,14:PRINT "| ";AT1$;TAB(40);BT1$;TAB(63);"|"
+3290 PRINT TAB(14);"| ";AT2$;TAB(40);BT2$;TAB(63);"|"
+3300 PRINT TAB(14);"| ";AT3$;TAB(40);BT3$;TAB(63);"|"
+3310 PRINT TAB(14);"| ";AT4$;TAB(40);BT4$;TAB(63);"|"
+3320 PRINT TAB(14);"| ";AT5$;TAB(40);BT5$;TAB(63);"|"
+3330 PRINT TAB(14);"| ";AT6$;TAB(40);BT6$;TAB(63);"|"
+3340 PRINT TAB(14);"| ";AT7$;TAB(40);BT7$;TAB(63);"|"
+3350 PRINT TAB(14);"| ";AT8$;TAB(40);BT8$;TAB(63);"|"
+3360 PRINT TAB(14);"| ";AT9$;TAB(40);BT9$;TAB(63);"|"
+3370 PRINT TAB(14);"| ";AT10$;TAB(40);BT10$;TAB(63);"|"
+3380 PRINT TAB(14);"| ";AT11$;TAB(40);BT11$;TAB(63);"|"
+3390 PRINT TAB(14);"|                                                |"
+3400 PRINT TAB(14);"|________________________________________________|"
+3410 PRINT TAB(14);"|                                                |"
+3420 PRINT TAB(14);"|  Mono / Stereo                                 |"
+3430 PRINT TAB(14);"|  Dolby off / B / C                             |"
+3440 PRINT TAB(14);"|                                                |"
+3450 PRINT TAB(14);"|                                                |"
+3460 PRINT TAB(14);"|                                                |"
+3470 PRINT TAB(14);"|  Datum        ";DATE$;TAB(63);"|"
+3480 PRINT TAB(14);"|                                                |"
+3490 PRINT TAB(14);"|  Eigenaar   : ";VWB$;TAB(63);"|"
+3500 PRINT TAB(14);"|  Type cass. : ";TC$;TAB(63);"|"
+3510 PRINT TAB(14);"|                                                |"
+3520 PRINT TAB(14);"|________________________________________________|"
+3530 PRINT
+3540 PRINT TAB(30);"Druk op de 'M' ..."
+3550 LI$=INKEY$
+3560 IF LI$="M" OR LI$="m" THEN 640
+3570 GOTO 3550
+3580 ' EIGENAAR/TYPE VAN CASSETTEBANDJE
+3590 CLS
+3600 LINE (0,17)-(650,17),4
+3610 LINE (0,18)-(650,18),15
+3620 LINE (0,19)-(650,19),9
+3630 LINE (0,130)-(650,130),4
+3640 LINE (0,131)-(650,131),15
+3650 LINE (0,132)-(650,132),9
+3660 PTN$="תתתתתתתתתתתתתתתתתתתתתתת"
+3670 PRINT SPACE$(18);"*** Eigenaar en type van cassettebandje ***"
+3680 PRINT:PRINT "         Hier kunt u invoeren van wie het bandje is en het type cassette."
+3690 LOCATE 5,40:PRINT PTN$:LOCATE 7,40:PRINT PTN$
+3700 LOCATE 5,10:INPUT "Van wie is het bandje       ";VWB$
+3710 LOCATE 7,10:INPUT "Wat voor type bandje is het ";TC$
+3720 LOCATE 9,10:PRINT "Kloppen de namen die u gekozen heeft (J/N) ?"
+3730 NVWB$=INKEY$
+3740 IF NVWB$="J" OR NVWB$="j" THEN 640
+3750 IF NVWB$="N" OR NVWB$="n" THEN 3700
+3760 GOTO 3730
+3770 ' GEGEVENS WISSEN
+3780 CLS
+3790 LINE (0,17)-(650,17),4
+3800 LINE (0,18)-(650,18),15
+3810 LINE (0,19)-(650,19),4
+3820 LINE (0,117)-(650,117),4
+3830 LINE (0,118)-(650,118),15
+3840 LINE (0,119)-(650,119),4
+3850 PRINT SPACE$(25);"*** Gegevens wissen ***"
+3860 LOCATE 3,10:PRINT "Met deze keuze kunt u de hoofdtitels, songtitels,"
+3870 LOCATE 4,10:PRINT "type cassette en de eigenaar wissen."
+3880 BEEP:LOCATE 6,10:PRINT "Wilt u alle gegevens wissen (J/N) ?"
+3890 GW$=INKEY$
+3900 IF GW$="J" OR GW$="j" THEN 3950
+3910 IF GW$="N" OR GW$="n" THEN 640
+3920 GOTO 3890
+3930 LOCATE 8,10:PRINT "Weet u zeker dat u alle gegevens wilt wissen (J/N) ?"
+3940 ZGW$=INKEY$
+3950 ' EINDE PROGRAMMA
+

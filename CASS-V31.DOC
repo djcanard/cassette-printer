@@ -1,0 +1,67 @@
+
+		******************************************
+                ***  DOC-FILE  CASSETTE PRINTER v 3.1  ***
+	        ***       (C)  1992 MALL-WARE          ***
+		******************************************
+
+ Deze files moet u hebben om cassette printer op te starten :
+
+ CASS-V31.BAS
+ CASS-V31.BAT
+ CASS-V31.PIF (alleen als u CP vanuit Windows wil opstarten !)
+ CASS-V31.DOC (de file die u nu leest)
+ GWBASIC .EXE
+ 
+
+ Cassette printer kunt u echter alleen draaien als u een EGA/VGA-scherm hebt,
+ met 64 kleuren voor de achtergrond.
+ U kunt hem misschien wel aanpassen als u geen EGA/VGA-scherm hebt.
+ Als u dat gaat doen moet u de commando's LINE, COLOR, SCREEN, PAINT,
+ veranderen of verwijderen.
+ 
+ Als u gaat printen en toch past het hoesje niet in het cassettebandje,
+ dan komt dat door de codes (CHR$) die het programma meegeeft, die
+ codes zijn dan anders op uw printer, dat kunt u zelf veranderen.
+ De codes zijn geschreven voor een JUKI 5510+ en compatibles. 
+ 
+ 
+ Vergelijking CP 3.0 - CP 3.1
+ ----------------------------
+ = Bij CP 3.01 geeft hij een foutmelding als uw printer niet klaar
+   staat, het programma geeft dan geen 'break'.
+
+ = Als u de ingevoerde gegevens weg wil schrijven onder een verkeerde
+   naam (bv. ?.cas) dan geeft hij ook weer een foutmelding, u kunt dan de 
+   goede naam geven, anders bent u alle gegevens kwijt !
+
+ = Er is voortaan een intro-muziekje.
+
+ = U ziet in de hoofdmenu de datum (linksboven) en de tijd (rechtsboven).
+
+ = CP 3.1 heeft een screen-saver ! U kunt ook zelf het aantal seconden
+   bepalen voordat het scherm 'verdwijnt'.
+ ----------------------------
+
+ De versies die ik heb gemaakt zijn :
+   CASSETTE PRINTER v 1.0         : 21 september 1991
+   CASSETTE PRINTER v 2.0 	  :  4 oktober   1991
+   CASSETTE PRINTER v 2.1  	  : 12 november  1991
+   CASSETTE PRINTER v 3.0	  : 17 februari  1992
+   CASSETTE PRINTER v 3.0 engels  : 27 februari  1992
+   CASSETTE PRINTER v 3.1         :  5 maart     1992
+
+ Bij CP 3.1 heb ik de file CASS-V31.PIF gemaakt, dan kunt u
+ hem ook vanuit Windows opstarten. De file's staan bij mij
+ in drive H:, dus als u cassette printer op een andere drive
+ hebt staan moet u dat in de PIF file veranderen, als u hem
+ vanuit Windows wil opstarten.
+ Bij 'Command line' moet u dan zetten : CASS-V31.PIF
+
+ Ik hoop dat u dit programma vaak zult gebruiken, ik heb wel een stel
+ uren achter de computer gezeten om dit programma te maken.
+ Ik moet nog zien of ik nog een betere versie erbij maak.
+
+						Met vriendelijke groeten,
+
+						Patrick Malgo (Mall-ware)
+                                                  

@@ -1,0 +1,37 @@
+3280 LPRINT CHR$(27);CHR$(120);CHR$(49);"      .---------------------------------------."
+3290 LPRINT"      .         (C) 1992 GILSOFTWARE          ."
+3070 LPRINT"      .                                       ."
+3080 LPRINT"      .                                       ."
+3090 LPRINT"      .---------------------------------------."
+3100 LPRINT"        ";CHR$(27);CHR$(87);CHR$(49);TI1$
+3110 LPRINT"    ";TI2$;CHR$(27);CHR$(87);CHR$(48)
+3120 LPRINT CHR$(27);CHR$(120);CHR$(49);"      .---------------------------------------."
+3130 LPRINT"      . KANT A:            KANT B:            ."
+3140 LPRINT"      . ------------------ ------------------ ."
+3150 LPRINT CHR$(27);CHR$(33);CHR$(17);"       . ";AT1$;TAB(34);BT1$;TAB(57);"."
+3160 LPRINT"       . ";AT2$;TAB(33);BT2$;TAB(56);"."
+3170 LPRINT"       . ";AT3$;TAB(33);BT3$;TAB(56);"."
+3180 LPRINT"       . ";AT4$;TAB(33);BT4$;TAB(56);"."
+3190 LPRINT"       . ";AT5$;TAB(33);BT5$;TAB(56);"."
+3200 LPRINT"       . ";AT6$;TAB(33);BT6$;TAB(56);"."
+3210 LPRINT"       . ";AT7$;TAB(33);BT7$;TAB(56);"."
+3220 LPRINT"       . ";AT8$;TAB(33);BT8$;TAB(56);"."
+3230 LPRINT"       . ";AT9$;TAB(33);BT9$;TAB(56);"."
+3240 LPRINT"       . ";AT10$;TAB(33);BT10$;TAB(56);"."
+3250 LPRINT"       . ";AT11$;TAB(33);BT11$;TAB(56);"."
+3260 LPRINT CHR$(27);CHR$(64);CHR$(27);CHR$(120);CHR$(49);"      .";TAB(50);"."
+3270 LPRINT"      ._______________________________________."
+3280 LPRINT"      .                                       ."
+3290 LPRINT"      .  Mono / Stereo                        ."
+3300 LPRINT"      .  Dolby off / B / C                    ."
+3310 LPRINT"      .                                       ."
+3320 LPRINT"      .                                       ."
+3330 LPRINT"      .                                       ."
+3340 LPRINT"      .  Datum        ";DATE$;TAB(47);"."
+3350 LPRINT"      .  Tijd         ";TIME$;TAB(47);"."
+3360 LPRINT"      .  Eigenaar   : ";VWB$
+3370 LPRINT"      .  Merk cass. : ";TC$
+3380 LPRINT"      .                                       ."
+3390 LPRINT"      ._______________________________________."
+3400 GOTO 640
+

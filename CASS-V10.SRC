@@ -1,0 +1,170 @@
+10 CLS:SCREEN 8:WIDTH 80:KEY OFF
+20 PRINT "               *** CASSETTE PRINTER ***"
+30 PRINT
+40 PRINT "             1 = KIES TITEL (zie je als hij in rek staat)"
+50 PRINT "             2 = KIES SONGTITELS"
+60 PRINT "             3 = PRINTEN
+70 PRINT "             4 = STOPPEN"
+80 PRINT
+90 INPUT " Uw keuze = ";KEUZE$
+100 IF  KEUZE$="1" THEN GOTO 140
+110 IF KEUZE$="2" THEN GOTO 280
+120 IF KEUZE$="3" THEN GOTO 710
+130 IF KEUZE$="4" THEN GOTO 620
+140 ' KIES TITEL
+150 CLS
+160 PRINT
+170 PRINT "                  *** TITEL KIEZEN ***"
+180 PRINT
+190 PRINT "       De titel zie je als hij in een rek staat.
+200 PRINT "       De titel mag niet langer zijn als 20 karakters.
+210 PRINT
+220 INPUT "          Wat is de titel ";TITEL$
+230 PRINT
+240 PRINT " Uw keuze is gemaakt (druk in de hoofdmenu weer op '1' als het niet goed is...)"
+250 PRINT:PRINT:PRINT:PRINT:PRINT:LINE INPUT "[enter]";ENTER$
+260 IF ENTER$="" THEN GOTO 10
+270 '
+280 ' KIES SONGTITLES
+290 CLS
+300 PRINT "               *** SONGTITEL KIEZEN ***"
+310 PRINT
+320 PRINT "       Je kunt maximaal 11 titels kiezen per kant (A/B)."
+330 PRINT "       Per titel 18 letters. Druk op enter als je genoeg titels hebt ."
+340 PRINT
+350 INPUT " kant A:    titel 1";AT1$
+360 INPUT "            titel 2";AT2$
+370 INPUT "            titel 3";AT3$
+380 INPUT "            titel 4";AT4$
+390 INPUT "            titel 5";AT5$
+400 INPUT "            titel 6";AT6$
+410 INPUT "            titel 7";AT7$
+420 INPUT "            titel 8";AT8$
+430 INPUT "            titel 9";AT9$
+440 INPUT "            titel 10";AT10$
+450 INPUT "            titel 11";AT11$
+460 PRINT
+470 PRINT
+480 INPUT " kant B:    titel 1";BT1$
+490 INPUT "            titel 2";BT2$
+500 INPUT "            titel 3";BT3$
+510 INPUT "            titel 4";BT4$
+520 INPUT "            titel 5";BT5$
+530 INPUT "            titel 6";BT6$
+540 INPUT "            titel 7";BT7$
+550 INPUT "            titel 8";BT8$
+560 INPUT "            titel 9";BT9$
+570 INPUT "            titel 10";BT10$
+580 INPUT "            titel 11";BT11$
+590 PRINT
+600 FOR WACHT=0 TO 3000:NEXT WACHT
+610 GOTO 10
+620 ' STOPPEN
+630 CLS
+640 PRINT
+650 INPUT "   Wil je echt stoppen (J/N)";SP$
+660 IF SP$="J" THEN CLS:KEY ON:SCREEN 0:END
+670 IF SP$="N" THEN GOTO 680
+680 PRINT
+690 PRINT "   De gegevens blijven bewaard !!!"
+700 FOR GEG=0 TO 3000:NEXT GEG:GOTO 10
+710 ' PRINTEN VAN HOESJE
+720 CLS
+730 PRINT "                   *** PRINTEN VAN HOESJE ***"
+740 PRINT
+750 PRINT "   Als je op de 'P' drukt gaat hij printen."
+760 PRINT "   Als je op de 'S' drukt laat hij het voorbeeld zien."
+770 INPUT "   Druk op de 'P' of 'S' ";PS$
+775 PRINT:PRINT:PRINT:PRINT:PRINT:PRINT:PRINT "    (caps-lock aanzetten)"
+780 IF PS$="P" THEN GOTO 820
+790 IF PS$="S" THEN GOTO 1200
+800 IF PS$<>"P" THEN GOTO 10
+810 IF PS$<>"S" THEN GOTO 10
+820 ' PRINTEN
+830 LPRINT "      |---------------------------------------|"
+840 LPRINT "      |         (C) 1991 GILSOFTWARE          |"
+850 LPRINT "      |                                       |"
+860 LPRINT "      |                                       |"
+870 LPRINT "      |---------------------------------------|"
+880 LPRINT "      |         ";TITEL$;"
+890 LPRINT "      |                                       |"
+900 LPRINT "      |---------------------------------------|"
+910 LPRINT "      | KANT A:            KANT B:            |"
+920 LPRINT "      | -------            -------            |"
+930 LPRINT "      | ";AT1$:LOCATE 22,28:LPRINT BT1$
+940 LPRINT "      | ";AT2$:LOCATE 22,28:LPRINT BT2$
+950 LPRINT "      | ";AT3$:LOCATE 22,28:LPRINT BT3$
+960 LPRINT "      | ";AT4$:LOCATE 22,28:LPRINT BT4$
+970 LPRINT "      | ";AT5$:LOCATE 22,28:LPRINT BT5$
+980 LPRINT "      | ";AT6$:LOCATE 22,28:LPRINT BT6$
+990 LPRINT "      | ";AT7$:LOCATE 22,28:LPRINT BT7$
+1000 LPRINT"      | ";AT8$:LOCATE 22,28:LPRINT BT8$
+1010 LPRINT"      | ";AT9$:LOCATE 22,28:LPRINT BT9$
+1020 LPRINT"      | ";AT10$:LOCATE 22,28:LPRINT BT10$
+1030 LPRINT"      | ";AT11$:LOCATE 22,28:LPRINT BT11$
+1035 LPRINT"      |                                       |"
+1040 LPRINT"      |_______________________________________|"
+1050 LPRINT"      |                                       |
+1060 LPRINT"      |  stereo    O                          |
+1070 LPRINT"      |  mono      O                          |"
+1080 LPRINT"      |                                       |"
+1090 LPRINT"      |  master    O                          |"
+1100 LPRINT"      |  copy      O                          |"
+1110 LPRINT"      |  date      ..-..-..                   |"
+1120 LPRINT"      |  time      ..:..:..                   |"
+1130 LPRINT"      |  property :_____________              |"
+1140 LPRINT"      |                                       |"
+1150 LPRINT"      |                                       |"
+1160 LPRINT"      |_______________________________________|"
+1170 PRINT
+1180 PRINT "      Een momentje aub..."
+1190 GOTO 10
+1200 ' SCHERM
+1210 PRINT "      |---------------------------------------|"
+1220 PRINT "      |         (C) 1991 GILSOFTWARE          |"
+1230 PRINT "      |                                       |"
+1240 PRINT "      |                                       |"
+1250 PRINT "      |---------------------------------------|"
+1260 PRINT "      |         ";TITEL$;"
+1270 PRINT "      |                                       |"
+1280 PRINT "      |---------------------------------------|"
+1290 PRINT "      | KANT A:            KANT B:            |"
+1300 PRINT "      | -------            -------            |"
+1310 PRINT "      | ";AT1$:LOCATE 23,28:PRINT BT1$
+1320 PRINT "      | ";AT2$:LOCATE 23,28:PRINT BT2$
+1330 PRINT "      | ";AT3$:LOCATE 23,28:PRINT BT3$
+1340 PRINT "      | ";AT4$:LOCATE 23,28:PRINT BT4$
+1350 PRINT "      | ";AT5$:LOCATE 23,28:PRINT BT5$
+1360 PRINT "      | ";AT6$:LOCATE 23,28:PRINT BT6$
+1370 PRINT "      | ";AT7$:LOCATE 23,28:PRINT BT7$
+1380 PRINT "      | ";AT8$:LOCATE 23,28:PRINT BT8$
+1390 PRINT "      | ";AT9$:LOCATE 23,28:PRINT BT9$
+1400 PRINT "      | ";AT10$:LOCATE 23,28:PRINT BT10$
+1410 PRINT "      | ";AT11$:LOCATE 23,28:PRINT BT11$
+1420 PRINT "      |                                       |"
+1430 PRINT "      |_______________________________________|"
+1440 PRINT "      |                                       |"
+1450 PRINT "      |  stereo    O                          |"
+1460 PRINT "      |  mono      O                          |"
+1470 PRINT "      |                                       |"
+1488 PRINT "      |  master    O                          |"
+1490 PRINT "      |  copy      O                          |"
+1500 PRINT "      |  date      ..-..-..                   |"
+1520 PRINT "      |  time      ..:..:..                   |"
+1530 PRINT "      |  property :_____________              |"
+1540 PRINT "      |                                       |"
+1550 PRINT "      |                                       |"
+1560 PRINT "      |_______________________________________|"
+1570 PRINT
+1580 LINE INPUT "  [enter]";LI$
+1590 IF LI$="" THEN GOTO 10
+1600 IF LI$<>"" THEN GOTO 10
+1610 '
+1620 ' Dit programaatje is gemaakt door Bas van Gils,
+1630 ' op 10-10-91 en 11-10-91.
+1640 ' Het kan zijn dat de songtitels niet uitkomen op KANT B:
+1650 ' Dat probeer ik nog te veranderen."
+1660 '
+1670 ' met vriendelijke groeten,
+1680 ' Bas van Gils     (C) 1991 GILSOFTWARE
+

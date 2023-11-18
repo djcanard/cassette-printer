@@ -1,0 +1,67 @@
+
+		******************************************
+                ***  Tekst bij CASSETTE PRINTER v 4.0  ***
+	        ***       (C)  1996 Ducksoft           ***
+		******************************************
+
+ Deze files die horen bij Cassette Printer zijn :
+
+ CASS-V40.BAS (basic-programma)
+ CASS-V40.BAT (opstartbestand)
+ CASS-V40.TXT (de file die u nu leest)
+ CASS-GWB.EXE (GW-Basic)
+ 
+
+ De voornaamste reden waarom ik versie 4.0 heb gemaakt, is dat een persoon genaamd
+ 'Mallware', mijn programma heeft aangepast (en dat is zacht uitgedrukt). Zelf had ik dit
+ programma nergens geback-uped. Dus toen heb ik het programma van diegene gekopieerd, maar
+ toen ik hem even wilde gebruiken, klopt er niets van het uitgeprinte labeltje.
+
+ Opmerking:
+ ----------
+
+ Als u gaat printen en het uitgeprinte labeltje past niet in het doosje van
+ het cassettebandje, dan komt dat door de printcodes (CHR$) die het programma meegeeft.
+ Deze codes zijn geschreven voor een JUKI 5510+. U kunt het programma daarop aanpassen voor
+ uw printer. (De codes voor uw printer staan in de handleiding van die printer.)
+ 
+ 
+ What's New (?)
+ ----------------------------
+
+ = De 11e titel van kant B, werd niet opgeslagen in de vorige versie.
+   Dit heb ik aangepast.
+
+ = De tekst die op het beeld scrollt als u het programma opstart, heb ik langzamer gezet
+   vanwege de snelheid die de computers tegenwoordig hebben!
+
+ = Het irritante intro-muziekje heb ik verwijderd!
+
+ = U kunt de tijd voor screensaver niet meer veranderen.
+
+ = U kunt de achtergrondkleur ook niet meer veranderen.
+
+(= Is dit een uitbreiding?!?!)
+
+ ----------------------------
+
+ De vorige versies die ik heb gemaakt zijn :
+
+   CASSETTE PRINTER v 1.0         : 21 september 1991
+   CASSETTE PRINTER v 2.0 	  :  4 oktober   1991
+   CASSETTE PRINTER v 2.1  	  : 12 november  1991
+   CASSETTE PRINTER v 3.0	  : 17 februari  1992
+   CASSETTE PRINTER v 3.0 Engels  : 27 februari  1992
+   CASSETTE PRINTER v 3.1         :  5 maart     1992
+   CASSETTE PRINTER v 4.0	  : 15 oktober   1996(!)
+
+
+ Ik hoop dat u dit programma vaak zult gebruiken, ik heb wel een stel
+ uren achter de computer gezeten om dit programma te maken.
+ Ik moet nog zien of ik nog een betere versie erbij maak.
+
+
+						Met vriendelijke groeten,
+
+						Bas van Gils (Ducksoft)
+                                                  
